@@ -19,11 +19,13 @@ function Chutar() {
         valueInput = document.getElementById('valor').value = '' // clear input
     } else if(secretNumber == valueInput) {
         result.innerHTML = win;
-    } else if(secretNumber != valueInput) {
+        buttonChutar = document.getElementById('buttonChutar').style.display="none"; // ocultar button
+    } else if(secretNumber != valueInput) { // tentativas
         attempts--; // decrementa o contator;
         
         if(attempts == 0) {
             result.innerHTML = erroAttemps;
+            buttonChutar = document.getElementById('buttonChutar').style.display="none"; // ocultar button
             return false;
         } 
 
